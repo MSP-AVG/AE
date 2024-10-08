@@ -25,12 +25,12 @@ Add-Type -AssemblyName System.Windows.Forms
 Add-Type -AssemblyName System.Drawing
 
 $form = New-Object System.Windows.Forms.Form
-$form.Text = 'Computer Profile 1'
-$form.Size = New-Object System.Drawing.Size(500,700)
+$form.Text = 'GroupTag'
+$form.Size = New-Object System.Drawing.Size(380,550)
 $form.StartPosition = 'CenterScreen'
 
 $okButton = New-Object System.Windows.Forms.Button
-$okButton.Location = New-Object System.Drawing.Point(150,300)
+$okButton.Location = New-Object System.Drawing.Point(150,450)
 $okButton.Size = New-Object System.Drawing.Size(75,23)
 $okButton.Text = 'OK'
 $okButton.DialogResult = [System.Windows.Forms.DialogResult]::OK
@@ -38,7 +38,7 @@ $form.AcceptButton = $okButton
 $form.Controls.Add($okButton)
 
 $cancelButton = New-Object System.Windows.Forms.Button
-$cancelButton.Location = New-Object System.Drawing.Point(225,300)
+$cancelButton.Location = New-Object System.Drawing.Point(225,450)
 $cancelButton.Size = New-Object System.Drawing.Size(75,23)
 $cancelButton.Text = 'Cancel'
 $cancelButton.DialogResult = [System.Windows.Forms.DialogResult]::Cancel
@@ -48,13 +48,13 @@ $form.Controls.Add($cancelButton)
 $label = New-Object System.Windows.Forms.Label
 $label.Location = New-Object System.Drawing.Point(10,20)
 $label.Size = New-Object System.Drawing.Size(280,20)
-$label.Text = 'Please select a profile:'
+$label.Text = 'Selecteer een locatie en type:'
 $form.Controls.Add($label)
 
 $listBox = New-Object System.Windows.Forms.ListBox
-$listBox.Location = New-Object System.Drawing.Point(10,40)
+$listBox.Location = New-Object System.Drawing.Point(23,40)
 $listBox.Size = New-Object System.Drawing.Size(260,20)
-$listBox.Height = 240
+$listBox.Height = 400
 $listBox.Width  = 300
 [void] $listBox.Items.Add('-------- Locatie --------')
 [void] $listBox.Items.Add('ALVM')
