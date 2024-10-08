@@ -79,10 +79,6 @@ $listBox.Width  = 300
 [void] $listBox.Items.Add('SNVM')
 [void] $listBox.Items.Add('AGREE')
 [void] $listBox.Items.Add('')
-#[void] $listBox.Items.Add('-------- Type --------')
-#[void] $listBoxType.Items.Add('Personal-')
-#[void] $listBoxType.Items.Add('Shared-')
-
 
 $form.Controls.Add($listBox)
 
@@ -94,18 +90,11 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK)
 {
     $x = $listBox.SelectedItem
     $Location = $x
-    #$GroupTag = $x
+   
 }
-#Show-PowershellWindow
 
-#================================================
-# Window Functions
-# Minimize Command and PowerShell Windows
-#================================================
-#$Script:showWindowAsync = Add-Type -MemberDefinition @"
-#[DllImport("user32.dll")]
-#public static extern bool ShowWindowAsync(IntPtr hWnd, int nCmdShow);
-#"@ -Name "Win32ShowWindowAsync" -Namespace Win32Functions -PassThru
+if (($Location -eq $null) -or ($Location.contains("---"))){iex (irm https://raw.githubusercontent.com/MSP-AVG/AE/refs/heads/main/ae-ap-menu.ps1)}
+
 
 function Hide-CmdWindow() {
     $CMDProcess = Get-Process -Name cmd -ErrorAction Ignore
@@ -176,5 +165,12 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK)
     $Type = $x
     
 }
+
+if (($Type -eq $null) -or ($Type.contains("---"))){iex (irm https://raw.githubusercontent.com/MSP-AVG/AE/refs/heads/main/ae-ap-menu.ps1)}
+
 $GroupTag = $Type+$Location
+
+if ($GroupTag -eq $null){iex (irm https://raw.githubusercontent.com/MSP-AVG/AE/refs/heads/main/ae-ap-menu.ps1)}
+
+
 Show-PowershellWindow
