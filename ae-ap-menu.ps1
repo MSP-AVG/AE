@@ -25,8 +25,8 @@ Add-Type -AssemblyName System.Windows.Forms
 Add-Type -AssemblyName System.Drawing
 
 $form = New-Object System.Windows.Forms.Form
-$form.Text = 'Computer Profile'
-$form.Size = New-Object System.Drawing.Size(500,400)
+$form.Text = 'Computer Profile 1'
+$form.Size = New-Object System.Drawing.Size(500,700)
 $form.StartPosition = 'CenterScreen'
 
 $okButton = New-Object System.Windows.Forms.Button
