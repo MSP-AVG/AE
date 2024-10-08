@@ -10,7 +10,7 @@ iex (https://raw.githubusercontent.com/MSP-AVG/AE/refs/heads/main/ae-ap-menu.ps1
 Write-Host -Foreground Red $GroupTag
 sleep -Seconds 3
 
-iex (irm https://raw.githubusercontent.com/petermekes/OSDCloud_scripts/main/functions.ps1)
+iex (https://raw.githubusercontent.com/MSP-AVG/AE/refs/heads/main/ae-functions.ps1)
 
 #++++++++++++++++++++++++++++++
 # Functions were here !!
