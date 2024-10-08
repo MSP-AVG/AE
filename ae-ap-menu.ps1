@@ -57,25 +57,25 @@ $listBox.Size = New-Object System.Drawing.Size(260,20)
 $listBox.Height = 240
 $listBox.Width  = 300
 [void] $listBox.Items.Add('-------- Locatie --------')
-[void] $listBox.Items.Add('ALVM')
+[void] $listBox.Items.Add('ALVM'),
 [void] $listBox.Items.Add('ALM')
-[void] $listBox.Items.Add('BVM')
+[void] $listBox.Items.Add('BVM'),
 [void] $listBox.Items.Add('DRM')
-[void] $listBox.Items.Add('ALH')
+[void] $listBox.Items.Add('ALH'),
 [void] $listBox.Items.Add('EMVM')
-[void] $listBox.Items.Add('EDVM')
+[void] $listBox.Items.Add('EDVM'),
 [void] $listBox.Items.Add('LSV')
-[void] $listBox.Items.Add('MAV')
+[void] $listBox.Items.Add('MAV'),
 [void] $listBox.Items.Add('NKVM')
-[void] $listBox.Items.Add('VPVM')
+[void] $listBox.Items.Add('VPVM'),
 [void] $listBox.Items.Add('EDB')
-[void] $listBox.Items.Add('DRH')
+[void] $listBox.Items.Add('DRH'),
 [void] $listBox.Items.Add('WAH')
-[void] $listBox.Items.Add('BPVM')
+[void] $listBox.Items.Add('BPVM'),
 [void] $listBox.Items.Add('HVVM')
-[void] $listBox.Items.Add('LWVM')
+[void] $listBox.Items.Add('LWVM'),
 [void] $listBox.Items.Add('LWM')
-[void] $listBox.Items.Add('EDT')
+[void] $listBox.Items.Add('EDT'),
 [void] $listBox.Items.Add('SNVM')
 [void] $listBox.Items.Add('AGREE')
 [void] $listBox.Items.Add('')
