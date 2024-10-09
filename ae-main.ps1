@@ -98,7 +98,8 @@ $GroupTag | Out-File -FilePath C:\Windows\DeviceType.txt
 
 Set-SetupCompleteOSDCloudUSB
 
-#Save Windows Image on USB 
+<#Save Windows Image on USB 
+
 $OSDCloudUSB = Get-Volume.usb | Where-Object {($_.FileSystemLabel -match 'OSDCloud') -or ($_.FileSystemLabel -match 'BHIMAGE')} | Select-Object -First 1
 $DriverPath = "$($OSDCloudUSB.DriveLetter):\OSDCloud\OS\"
 $ImageFileName = Get-ChildItem -Path $DriverPath -Name *.esd
@@ -110,6 +111,6 @@ if (!(Test-Path $DriverPath)){New-Item -ItemType Directory -Path $DriverPath}
 if (!(Test-Path $DriverPath$ImageFileNameDL)){Copy-Item -Path C:\OSDCloud\OS\$ImageFileNameDL -Destination $DriverPath$ImageFileNameDL -Force}
 }
 #===================
-
+#>
 restart-computer
 }
