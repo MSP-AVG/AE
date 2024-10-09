@@ -48,7 +48,7 @@ $form.Controls.Add($cancelButton)
 $label = New-Object System.Windows.Forms.Label
 $label.Location = New-Object System.Drawing.Point(10,20)
 $label.Size = New-Object System.Drawing.Size(280,20)
-$label.Text = 'Selecteer een locatie en type:'
+$label.Text = 'Selecteer een locatie:'
 $form.Controls.Add($label)
 
 $listBox = New-Object System.Windows.Forms.ListBox
@@ -56,7 +56,7 @@ $listBox.Location = New-Object System.Drawing.Point(23,40)
 $listBox.Size = New-Object System.Drawing.Size(260,20)
 $listBox.Height = 400
 $listBox.Width  = 300
-[void] $listBox.Items.Add('-------- Locatie --------')
+#[void] $listBox.Items.Add('-------- Locatie --------')
 [void] $listBox.Items.Add('ALVM')
 [void] $listBox.Items.Add('ALM')
 [void] $listBox.Items.Add('BVM')
@@ -95,7 +95,7 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK)
 
 if (($Location -eq $null) -or ($Location.contains("---"))){iex (irm https://raw.githubusercontent.com/MSP-AVG/AE/refs/heads/main/ae-ap-menu.ps1)}
 
-
+<#
 function Hide-CmdWindow() {
     $CMDProcess = Get-Process -Name cmd -ErrorAction Ignore
     foreach ($Item in $CMDProcess) {
@@ -108,6 +108,8 @@ function Hide-PowershellWindow() {
 function Show-PowershellWindow() {
     $null = $showWindowAsync::ShowWindowAsync((Get-Process -Id $pid).MainWindowHandle, 10)
 }
+#>
+
 Hide-CmdWindow
 Hide-PowershellWindow
 
@@ -138,7 +140,7 @@ $form.Controls.Add($cancelButton)
 $label = New-Object System.Windows.Forms.Label
 $label.Location = New-Object System.Drawing.Point(10,20)
 $label.Size = New-Object System.Drawing.Size(280,20)
-$label.Text = 'Selecteer een locatie en type:'
+$label.Text = 'Selecteer een type:'
 $form.Controls.Add($label)
 
 $listBox = New-Object System.Windows.Forms.ListBox
@@ -148,7 +150,7 @@ $listBox.Size = New-Object System.Drawing.Size(260,20)
 $listBox.Height = 100
 $listBox.Width  = 300
 
-[void] $listBox.Items.Add('-------- Type --------')
+#[void] $listBox.Items.Add('-------- Type --------')
 [void] $listBox.Items.Add('Personal-')
 [void] $listBox.Items.Add('Shared-')
 
