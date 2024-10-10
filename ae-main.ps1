@@ -3,7 +3,6 @@ Loads Functions
 Creates Setup Complete Files
 #>
 
-
 Set-ExecutionPolicy Bypass -Force
 iex (irm https://raw.githubusercontent.com/MSP-AVG/AE/refs/heads/main/ae-ap-menu.ps1)
 
@@ -99,7 +98,6 @@ $GroupTag | Out-File -FilePath C:\Windows\DeviceType.txt
 Set-SetupCompleteOSDCloudUSB
 
 #Save Windows Image on USB 
-
 $OSDCloudUSB = Get-Volume.usb | Where-Object {($_.FileSystemLabel -match 'OSDCloud') -or ($_.FileSystemLabel -match 'BHIMAGE')} | Select-Object -First 1
 $DriverPath = "$($OSDCloudUSB.DriveLetter):\OSDCloud\OS\"
 $ImageFileName = Get-ChildItem -Path $DriverPath -Name *.esd
@@ -111,7 +109,8 @@ if (!(Test-Path $DriverPath)){New-Item -ItemType Directory -Path $DriverPath}
 if (!(Test-Path $DriverPath$ImageFileNameDL)){Copy-Item -Path C:\OSDCloud\OS\$ImageFileNameDL -Destination $DriverPath$ImageFileNameDL -Force}
 }
 #===================
-#
-}
+
 Restart-Computer
+}
+
 
