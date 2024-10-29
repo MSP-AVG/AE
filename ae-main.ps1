@@ -62,7 +62,8 @@ if ($DriverPack){
  
 if (Test-HPIASupport){
     #$Global:MyOSDCloud.DevMode = [bool]$True
-    $Global:MyOSDCloud.HPTPMUpdate = [bool]$True
+    $Global:MyOSDCloud.HPTPMUpdate = [bool]$false
+    #$Global:MyOSDCloud.HPTPMUpdate = [bool]$True
     $Global:MyOSDCloud.HPIAALL = [bool]$false
     #if ($Product -ne '83B2'){$Global:MyOSDCloud.HPIAALL = [bool]$true} #I've had issues with this device and HPIA
     $Global:MyOSDCloud.HPBIOSUpdate = [bool]$true
