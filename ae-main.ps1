@@ -30,8 +30,8 @@ if ($env:SystemDrive -eq 'X:') {
 #Variables to define the Windows OS / Edition etc to be applied during OSDCloud
 $Product = (Get-MyComputerProduct)
 $OSVersion = 'Windows 11' #Used to Determine Driver Pack
-$OSReleaseID = '24H2' #Used to Determine Driver Pack
-$OSName = 'Windows 11 24H2 x64'
+$OSReleaseID = '23H2' #Used to Determine Driver Pack
+$OSName = 'Windows 11 23H2 x64'
 $OSEdition = 'Enterprise'
 $OSActivation = 'Volume'
 $OSLanguage = 'nl-NL'
@@ -62,10 +62,8 @@ if ($DriverPack){
  
 if (Test-HPIASupport){
     #$Global:MyOSDCloud.DevMode = [bool]$True
-    $Global:MyOSDCloud.HPTPMUpdate = [bool]$false
-    #$Global:MyOSDCloud.HPTPMUpdate = [bool]$True
-    $Global:MyOSDCloud.HPIAALL = [bool]$false
-    #if ($Product -ne '83B2'){$Global:MyOSDCloud.HPIAALL = [bool]$true} #I've had issues with this device and HPIA
+    $Global:MyOSDCloud.HPTPMUpdate = [bool]$True
+    if ($Product -ne '83B2'){$Global:MyOSDCloud.HPIAALL = [bool]$true} #I've had issues with this device and HPIA
     $Global:MyOSDCloud.HPBIOSUpdate = [bool]$true
 
     #Set HP BIOS Settings to what I want:
