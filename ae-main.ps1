@@ -63,7 +63,8 @@ if ($DriverPack){
 if (Test-HPIASupport){
     #$Global:MyOSDCloud.DevMode = [bool]$True
     $Global:MyOSDCloud.HPTPMUpdate = [bool]$True
-    if ($Product -ne '83B2' -or $Model -notmatch "HP Pro Mini 400 G9 Desktop PC"){$Global:MyOSDCloud.HPIAALL = [bool]$true} #I've had issues with this device and HPIA
+    $Global:MyOSDCloud.HPIAALL = [bool]$false
+    #if ($Product -ne '83B2'){$Global:MyOSDCloud.HPIAALL = [bool]$true} #I've had issues with this device and HPIA
     $Global:MyOSDCloud.HPBIOSUpdate = [bool]$true
 
     #Set HP BIOS Settings to what I want:
