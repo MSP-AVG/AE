@@ -67,7 +67,7 @@ if (Test-HPIASupport){
     $Global:MyOSDCloud.HPBIOSUpdate = [bool]$true
 
     #Set HP BIOS Settings to what I want:
-    iex (irm https://raw.githubusercontent.com/MSP-AVG/AE/refs/heads/main/ae-manage-HPBiosSettings.ps1)
+    iex (irm https://raw.githubusercontent.com/MSP-AVG/AE/refs/heads/main/ae-Manage-HPBiosSettings.ps1)
     Manage-HPBiosSettings -SetSettings
 }
 
