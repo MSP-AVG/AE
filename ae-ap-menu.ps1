@@ -18,10 +18,8 @@ function Hide-PowershellWindow() {
 function Show-PowershellWindow() {
     $null = $showWindowAsync::ShowWindowAsync((Get-Process -Id $pid).MainWindowHandle, 10)
 }
-#Hide-CmdWindow
-#Hide-PowershellWindow
-
-$ErrorActionPreference = 'Stop'
+Hide-CmdWindow
+Hide-PowershellWindow
 
 Add-Type -AssemblyName System.Windows.Forms
 Add-Type -AssemblyName System.Drawing
